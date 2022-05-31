@@ -1,0 +1,5 @@
+setuptools
+slackclient
+python-dotenv
+slackeventsapi
+Flask
