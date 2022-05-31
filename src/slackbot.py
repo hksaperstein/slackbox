@@ -1,8 +1,7 @@
 import slack
 import os
 from dotenv import load_dotenv
-from pathlib import Path
-from flask import Flask
+from flask import Flask, request, Response
 from slackeventsapi import SlackEventAdapter
 
 # def main():
@@ -33,6 +32,12 @@ def message(payload):
 
     # Start Webserver
 
+@app.route('/ticket', methods=['POST'])
+def ticket():
+    data = request.form
+    print(data)
+    client.chat_postMessage(channel='#general', text="hi")
+    return Response(), 200
 
 if __name__ == "__main__":
     # main()
